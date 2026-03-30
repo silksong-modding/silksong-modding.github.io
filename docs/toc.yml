@@ -3,7 +3,7 @@
     - name: AssetHelper
       href: https://docs.silksong-modding.org/Silksong.AssetHelper/
     - name: DataManager
-      href: https://github.com/silksong-modding/Silksong.DataManager
+      href: https://docs.silksong-modding.org/Silksong.DataManager
     - name: FsmUtil
       href: https://docs.silksong-modding.org/Silksong.FsmUtil
     - name: I18N
