@@ -9,7 +9,7 @@
     - name: I18N
       href: https://github.com/silksong-modding/Silksong.I18N
     - name: ModMenu
-      href: https://github.com/silksong-modding/Silksong.ModMenu
+      href: https://docs.silksong-modding.org/Silksong.ModMenu
     - name: Prepatcher
       href: https://docs.silksong-modding.org/Silksong.Prepatcher
     - name: UnityHelper
