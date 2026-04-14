@@ -32,7 +32,7 @@ jobs:
       - name: DocFX Build
         run: dotnet docfx
       - name: Upload assets
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
       - name: Deploy
