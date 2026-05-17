@@ -7,7 +7,7 @@
     - name: FsmUtil
       href: https://docs.silksong-modding.org/Silksong.FsmUtil
     - name: I18N
-      href: https://github.com/silksong-modding/Silksong.I18N
+      href: https://docs.silksong-modding.org/Silksong.I18N
     - name: ModMenu
       href: https://docs.silksong-modding.org/Silksong.ModMenu
     - name: Prepatcher
