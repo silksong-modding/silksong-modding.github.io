@@ -3,6 +3,8 @@ name: Publish Docs
 on:
   push:
     branches: ["main"]
+  repository_dispatch:
+    types: ["template-updated"]
 
 permissions:
   actions: read
@@ -23,8 +25,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-        with:
-          submodules: true
+      - name: Get template
+        run: |
+          mkdir silksong-modding
+          gh api repos/silksong-modding/silksong-modding-style-docfx/tarball/dist >> template.tar.gz
+          tar -xzf template.tar.gz -C silksong-modding --strip-components 1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 10.x

@@ -1,3 +1,5 @@
 _site/
 node_modules/
 /_exported_templates
+/silksong-modding
+*.tar.gz
