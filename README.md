@@ -37,6 +37,9 @@ The modding docs are built using [docfx](https://dotnet.github.io/docfx). To bui
 `docfx`. To host the local site, run `docfx serve _site`. You can also use the shorthand
 `docfx --serve` to build and run the site.
 
+To get a local copy of the current styles, you can follow along with the "Get template" step of the
+publish workflow.
+
 ### Formatting
 
 The modding docs use [Prettier](https://prettier.io/) for formatting. There are extensions to
