@@ -17,31 +17,7 @@ concurrency:
 
 jobs:
   generate-docs:
-    runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.output.page_url }}
-
-    steps:
-      - uses: actions/checkout@v6
-      - name: Get template
-        run: |
-          mkdir silksong-modding
-          gh api repos/silksong-modding/silksong-modding-style-docfx/tarball/dist >> template.tar.gz
-          tar -xzf template.tar.gz -C silksong-modding --strip-components 1
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-dotnet@v5
-        with:
-          dotnet-version: 10.x
-      - run: dotnet tool restore
-      - name: DocFX Build
-        run: dotnet docfx
-      - name: Upload assets
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: _site
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v5
+    uses: silksong-modding/silksong-modding-style-docfx/.github/workflows/build-docs.yml@main
+    with:
+      environment-name: github-pages
+      docs-path: "."
