@@ -21,3 +21,4 @@ jobs:
     with:
       environment-name: github-pages
       docs-path: "."
+      dotnet-build: false
