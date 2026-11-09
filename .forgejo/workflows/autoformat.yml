@@ -1,0 +1,22 @@
+name: Format check
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: https://code.forgejo.org/actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: https://code.forgejo.org/actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "lts/*"
+          check-latest: true
+      - run: npm ci
+      # Check-only: autofix.ci is a GitHub App and isn't available on Forgejo.
+      # An org-wide autofix replacement is planned.
+      - run: npx prettier --check .
